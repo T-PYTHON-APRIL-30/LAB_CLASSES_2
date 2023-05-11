@@ -36,13 +36,13 @@ class BankAccount:
         return self.account_holder
 
 
-bank1 = BankAccount("BAkr", 100)
+bank1 = BankAccount("BAkr", 1000)
 print("money in the bank:")
 print(bank1.initial_balance)
 print("after depositthe money:")
-print(bank1.deposit(50))
+print(bank1.deposit(500))
 print("after withdraw:")
-print(bank1.withdraw(150))
+print(bank1.withdraw(250))
 print("get account holder method:")
 print(bank1.get_account_holder())
 print("get money method")
