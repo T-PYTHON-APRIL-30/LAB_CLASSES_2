@@ -13,7 +13,7 @@ A method called get_account_holder that returns the name of the account holder.'
 
 class BankAccount:
     
-    def __init__(self, account_holder, initial_balance):
+    def __init__(self, account_holder: str, initial_balance : float = 0):
         self.account_holder = account_holder
         self.initial_balance = initial_balance
 
@@ -29,16 +29,15 @@ class BankAccount:
         if type(amount) != float:
             raise ValueError('Please provide a valid value!!')
         
-        if amount > self.getBalance():
-            raise Exception('there are insufficient funds!!')
+        if amount <= self.getBalance():
+            self.setBalance(self.getBalance() - amount)
         
         else:
-            self.setBalance(self.getBalance() - amount)
-
+            print('there are insufficient funds!!')
+            
         return self.getBalance()
         
     
-
     def getBalance(self)-> float:
         return self.initial_balance
     
