@@ -1,7 +1,7 @@
 class BankAccount:
     def __init__(self,account_holder:str,initial_balance:float=0):
         self.account_holder=account_holder
-        self._initial_balance=initial_balance
+        self.__initial_balance=initial_balance
     
     def set_balance(self,set):
         if type(set) != float:
@@ -9,20 +9,20 @@ class BankAccount:
 
         if set < 0:
             raise ValueError(" provide an above 0  ")
-        self._initial_balance = set
+        self.__initial_balance = set
     
     def get_balance(self):
-        return self._initial_balance
+        return self.__initial_balance
     
     def deposit(self,add):
-       self._initial_balance+=add
-       value=self._initial_balance
+       self.__initial_balance+=add
+       value=self.__initial_balance
        return value
     
     def withdraw(self,sub):
-        if self._initial_balance>=sub:
-            self._initial_balance-=sub
-            value=self._initial_balance
+        if self.__initial_balance>=sub:
+            self.__initial_balance-=sub
+            value=self.__initial_balance
             return value
         else:
             return "you dont have money :("
