@@ -111,7 +111,7 @@ print("---- Bus ----\n")
 print(myBus.drive() +"\n"+myBus.carry_cargo() + " and " + myBus.busFuel()+".")
 print(f"Also its color It's {myBus.color} and is plate number is {myBus.get_plate_number()}.")
 print("\n---- Truck ----\n")
-print(f"The {myTruck.name} It's made by {myTruck.brand}.")
+print(f"The {myTruck.name} It's made by {myTruck.brand} with {myTruck.wheel} wheels.")
 print(myTruck.carry_cargo() + " and " + myTruck.truckFuel()+".")
 print(f"Also its color It's {myTruck.color} and is plate number is {myTruck.get_plate_number()}.")
 
