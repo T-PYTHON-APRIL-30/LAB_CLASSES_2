@@ -1,0 +1,128 @@
+# superclass vehicle
+class Vehicle():
+    def __init__(self, brand, name, color, capacity, plate_number):
+        self.__brand = brand
+        self.__name = name
+        self.__color = color
+        self.__capacity = capacity
+        self.__plate_number = plate_number
+
+    # getter methods
+    def get_brand(self):
+        return self.__brand
+    
+    def get_name(self):
+        return self.__name
+    
+    def get_color(self):
+        return self.__color
+    
+    def get_capacity(self):
+        return self.__capacity
+    
+    def get_plate_number(self):
+        return self.__plate_number
+      
+    # setter methods
+    def set_brand(self, brand):
+        self.__brand = brand
+  
+    def set_name(self, name):
+        self.__name = name
+        
+    def set_color(self, color):
+        self.__color = color
+    
+    def set_capacity(self, capacity):
+        self.__capacity = capacity
+    
+    def set_plate_number(self, plate_number):
+        self.__plate_number = plate_number
+
+    # prints vehicle_name is driving
+    def drive(self):
+        print(f"the {self. get_name()} is driving !!")
+
+    # prints vehicle_name is drifting
+    # or something else depending on the class ?
+    def drift(self):
+        print(f"the {self.get_name()} is drifting !!")
+
+    # prints vehicle_name is carrying cargo
+    # or something else depending on the class ?
+    def carry_cargo(self):
+        print(f"the {self.get_name()} is carrying cargo !!")
+
+# override the methods as needed for each subclass of vehicle
+# subclass bus
+class Bus(Vehicle):
+    def drive(self):
+        print(f"the bus {self.get_name()} is driving !!")
+
+    def drift(self):
+        print(f"the bus {self.get_name()} can not drifting !!")
+
+    def carry_cargo(self):
+        print(f"the bus {self.get_name()} is carrying passengers !!")
+
+# subclass truck
+class Truck(Vehicle):
+    def drive(self):
+        print(f"the truck {self.get_name()} is driving !!")
+
+    def drift(self):
+        print(f"the truck {self.get_name()} is drifting cargo !!")
+
+    def carry_cargo(self):
+        print(f"the truck {self.get_name()} is carrying cargo !!")
+
+# create at least one object of each class
+vehicle = Vehicle("Toyota", "Corolla", "blue", 400, "FEG890")
+bus = Bus("Volvo", "B7L", "black", 30, "ABC123")
+truck = Truck("Mercedes-Benz", "Actros", "green", 1000, "DEF456")
+
+# call all the methods on each object
+vehicle.drive()
+vehicle.drift()
+vehicle.carry_cargo()
+
+print()
+bus.drive()
+bus.drift()
+bus.carry_cargo()
+
+print()
+truck.drive()
+truck.drift()
+truck.carry_cargo()
+
+
+
+
+
+
+
+
+
+class Bus(Vehicle):
+
+  def drive(self):
+      print(f"The bus named {self.get_name()} is driving!")
+
+  def drift(self):
+      print("Buses can't drift!")
+
+  def carry_cargo(self):
+      print(f"The bus named {self.get_name()} is carrying passengers!")
+
+
+class Truck(Vehicle):
+
+  def drive(self):
+      print(f"The truck named {self.get_name()} is driving!")
+
+  def drift(self):
+      print(f"The truck named {self.get_name()} is drifting with cargo!")
+
+  def carry_cargo(self):
+      print(f"The truck named {self.get_name()} is carrying heavy cargo!")
