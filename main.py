@@ -54,3 +54,72 @@ while True:
             print("\nWrong entry.. Try again !")
     else:
         print("\nWrong entrt.. Try again !")
+
+#--------------- Bonus ---------------
+
+class Vehicle():
+
+    def __init__(self,brand:str,name:str,color:str,capacity:int,plate_number:str):
+        self.brand = brand
+        self.name = name 
+        self.color = color
+        self.capacity = capacity
+        self.__plate_number = plate_number
+    
+    def get_plate_number(self):
+        return self.__plate_number
+    def set_plate_number(self,plate_number):
+        self.__plate_number = plate_number
+        
+
+    def drive(self):
+        return f"The {self.name} is driving!"
+    def drift(self):
+        return f"The {self.name} is drifting !!"
+    def carry_cargo(self):
+        return f"The {self.name} is carrying cargo !!"
+
+class Bus(Vehicle):
+    def __init__(self, brand: str, name: str, color: str, capacity: int,fuel:str, plate_number: str,catagory:str):
+        super().__init__(brand, name, color, capacity, plate_number)
+        self.fuel = fuel
+        self.catagory = catagory
+    def busFuel (self):
+        return f"it is {self.fuel}"
+    def carry_cargo(self):
+        return f"The {self.name} its for {self.catagory}"
+    
+
+class Truck(Vehicle):
+    def __init__(self, brand: str, name: str, color: str, capacity: int,fuel:str, plate_number: str,wheel:int):
+        super().__init__(brand, name, color, capacity, plate_number)
+        self.fuel = fuel
+        self.wheel = wheel
+    def drift(self):
+        return f" so the {self.name} It's drift hardly !!"
+    def truckFuel (self):
+        return f"it is {self.fuel}"
+    def carry_cargo(self):
+        return super().carry_cargo() + f"{self.drift()}"
+
+
+myTruck = Truck("Mercedes","Actros","blue",11554,"diesel","Yz97c",10)
+myBus = Bus("Toyota","Hiace","white",2275,"petrol","wx123","freight")
+
+
+print("---- Bus ----\n")
+print(myBus.drive() +"\n"+myBus.carry_cargo() + " and " + myBus.busFuel()+".")
+print(f"Also its color It's {myBus.color} and is plate number is {myBus.get_plate_number()}.")
+print("\n---- Truck ----\n")
+print(f"The {myTruck.name} It's made by {myTruck.brand}.")
+print(myTruck.carry_cargo() + " and " + myTruck.truckFuel()+".")
+print(f"Also its color It's {myTruck.color} and is plate number is {myTruck.get_plate_number()}.")
+
+# capacity
+print("\n---- Comparison capacity ----\n")
+if myBus.capacity > myTruck.capacity:
+    print(f"The {myBus.name} has more capacity than {myTruck.name}.")
+elif myBus.capacity < myTruck.capacity:
+    print(f"The {myTruck.name} has more capacity than {myBus.name}.")
+else:
+    print(f"The {myBus.name} and the {myTruck.name} has the same capacity.")
