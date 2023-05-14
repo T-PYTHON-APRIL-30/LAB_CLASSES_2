@@ -17,8 +17,10 @@ class BankAccount:
     def __init__(self,account_holder:str,initial_balance:float=0):
         self.account_holder=account_holder
         self.initial_balance= initial_balance
-
+#teacher solution
     def deposit(self, amount:float)-> float:
+        #self.initial_balance+=amount
+        #return self.initial_balance
         updated_balance = amount+ self.get_balance()
         self.initial_balance= updated_balance
         print("The process was successfully")
@@ -26,7 +28,11 @@ class BankAccount:
 
     def withdraw (self, amount:float)->float:
         if amount > self.get_balance():
+            #raise Exception("You don't have enough funds !")
             print("The amout is out of your balane")
+        #else:
+        #self.initial_balance-=amount
+        #return self.initial_balance
         updated_balance= self.get_balance()-amount
         self.initial_balance= updated_balance
         print("The process was successfully")

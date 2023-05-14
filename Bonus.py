@@ -30,13 +30,13 @@ class Vehicle:
     
     #methods
     def drive(self, name):
-        print(f"the {self.get_name()} is driving!")
+        return f"the {self.get_name()} is driving!"
 
     def drift(self, name):
-        print(f"the {self.get_name()} is drifting !!")
+        return f"the {self.get_name()} is drifting !!"
 
     def carry_cargo(self,name):
-        print(f"the {self.get_name()} is carrying cargo !!")
+        return f"the {self.get_name()} is carrying cargo !!"
 
     
     #setter & getter (brand)
@@ -85,9 +85,7 @@ class Bus(Vehicle):
     def __init__(self, brand: str, name: str, color: str, capacity: int, plate_number: str):
         super().__init__(brand, name, color, capacity, plate_number)
 
-    def drive(self, name):
-        return super().drive(name)
-
+    
     def drift(self, name: str):
         return f"the {self.get_name()} isn't drifting!"
     
@@ -106,14 +104,12 @@ class Truck(Vehicle):
     def __init__(self, brand: str, name: str, color: str, capacity: int, plate_number: str):
         super().__init__(brand, name, color, capacity, plate_number)
 
-    def drive(self, name):
-        return super().drive(name)
+    
     
     def drift(self, name):
         return f"the {self.get_name()} isn't drifting!"
     
-    def carry_cargo(self, name):
-        return super().carry_cargo(name)
+
     
 
 truck1=Truck("Volvo","Volvo Truck96","blue", 45, "567-FGH")
