@@ -18,34 +18,25 @@ class BankAccount:
         self.initial_balance = initial_balance
 
     def deposit(self, amount:float)-> float:
-        if type(amount) != float:
-            raise ValueError('Please provide a valid value!!')
-        
-        self.setBalance(self.getBalance()+amount)
 
-        return self.getBalance()
+        self.initial_balance += amount
+
+        return self.initial_balance
     
     def withdraw (self, amount:float)-> float:
-        if type(amount) != float:
-            raise ValueError('Please provide a valid value!!')
         
-        if amount <= self.getBalance():
-            self.setBalance(self.getBalance() - amount)
+        if amount <= self.initial_balance:
+            self.initial_balance -= amount
         
         else:
-            print('there are insufficient funds!!')
+            raise Exception('there are insufficient funds!!')
             
-        return self.getBalance()
+        return self.initial_balance
         
     
     def getBalance(self)-> float:
         return self.initial_balance
     
-    def setBalance (self, balance:float):
-        if type(balance) != float:
-            raise ValueError('Please provide a valid value!!')
-        
-        self.initial_balance = balance
 
     def get_account_holder(self):
         return self.account_holder
@@ -56,5 +47,7 @@ balance = account1.deposit(10000.0)
 print(f'Your balance after the deposit is: {balance}')
 balance = account1.withdraw(5000.0)
 print(f'Your balance after the withdraw is: {balance}')
+print(f'The account holder is {account1.account_holder}')
+print(f'The initial balance is: {account1.initial_balance}')
 
     

@@ -13,73 +13,73 @@ call all the methods on each object.'''
 class Vehicle:
 
     def __init__(self, brand:str, name:str, color:str, capacity:int, plateNumber:str):
-        self.brand = brand
-        self.name = name
-        self.color = color
-        self.capacity = capacity
-        self.plateNumber = plateNumber
+        self.__brand = brand
+        self.__name = name
+        self.__color = color
+        self.__capacity = capacity
+        self.__plateNumber = plateNumber
 
 
     def drive(self):
-        print(f'The {self.name} is driving..')
+        print(f'The {self.getName()} is driving..')
     
     def drift(self, checkValue:bool)-> str:
         if checkValue == True:
-            return f'The {self.name} is drifting..'
+            return f'The {self.getName()} is drifting..'
         else:
-            return f'The {self.name} is not drifting..'
+            return f'The {self.getName()} is not drifting..'
 
     def carryCarg(self,checkValue:bool):
         if checkValue == True:
-            return f'The {self.name} is carrying cargo..'
+            return f'The {self.getName()} is carrying cargo..'
         
         else:
-            return f'The {self.name} is not carrying cargo..'
+            return f'The {self.getName()} is not carrying cargo..'
 
     def getBrand(Self):
-        return Self.brand
+        return Self.__brand
     
     def getName(self):
-        return self.name
+        return self.__name
     
     def getColor(self):
-        return self.color
+        return self.__color
     
     def getCapacity(self):
-        return self.capacity
+        return self.__capacity
     
     def getPlateNumber(self):
-        return self.plateNumber
+        return self.__plateNumber
     
     def setBrand(self,carBrand:str):
         if type(carBrand) != str:
             raise ValueError('Please provide a valid value!!')
         
-        self.brand = carBrand
+        self.__brand = carBrand
 
     def setName(self, carName:str):
         if type(carName) != str:
             raise ValueError('Please provide a valid value!!')
         
-        self.name = carName
+        self.__name = carName
 
     def setColor(self, carColor:str):
         if type(carColor) != str:
             raise ValueError('Please provide a valid value!!')
         
-        self.color = carColor
+        self.__color = carColor
 
     def setCapacity(self,carCapacity:int):
         if type(carCapacity) != int:
             raise ValueError('Please provide a valid value!!')
         
-        self.capacity = carCapacity
+        self.__capacity = carCapacity
     
     def setPlateNumber(self, carPlateNumber:str):
         if type(carPlateNumber) != str:
             raise ValueError('Please provide a valid value!!')
         
-        self.plateNumber = carPlateNumber
+        self.__plateNumber = carPlateNumber
 
 
 class Bus (Vehicle):
@@ -111,8 +111,8 @@ class Truck(Vehicle):
 
     def __init__(self, brand: str, name: str, color: str, capacity: int, plateNumber: str, drifting:bool = True, hasCargo: bool = True):
         super().__init__(brand, name, color, capacity, plateNumber)
-        self.drifting = drifting
-        self.hasCargo = hasCargo
+        self.__drifting = drifting
+        self.__hasCargo = hasCargo
 
     def carryCarg(self):
         return super().carryCarg(self.getHasCargo())
@@ -124,10 +124,10 @@ class Truck(Vehicle):
         return super().drive()
     
     def getHasCargo(self):
-        return self.hasCargo
+        return self.__hasCargo
     
     def getDrifting(self):
-        return self.drifting
+        return self.__drifting
     
 
 
