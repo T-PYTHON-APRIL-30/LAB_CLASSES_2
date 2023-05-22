@@ -34,13 +34,13 @@ class Vehicle :
     
     #methods
     def drive (self):
-        print (f"the {self.get_name()} is driving!")
+        return (f"the {self.get_name()} is driving!")
     
     def drift (self):
-        print (f"the {self.__name} is drifting!!")
+        return (f"the {self.__name} is drifting!!")
     
     def carry_cargo (self):
-        print (f"the {self.__name} is carrying a cargo!!")
+        return (f"the {self.__name} is carrying a cargo!!")
 
 #Create tow other subclasses (inherit from vehicle)
 class Bus (Vehicle):
@@ -61,5 +61,5 @@ vehicle3 = Bus("GM","transit","Yellow and black",140,3,40)
 
 #call all the methods on each object.
 print(f"{vehicle1.drift()}\n{vehicle1.drive()}\n{vehicle1.carry_cargo()}")
-print(f"{vehicle2.drift()}\n{vehicle2.drive()}\n{vehicle2.carry_cargo()}")
-print(f"{vehicle3.drift()}\n{vehicle3.drive()}\n{vehicle3.carry_cargo()}")
+print(f"\n\n{vehicle2.drift()}\n{vehicle2.drive()}\n{vehicle2.carry_cargo()}")
+print(f"\n\n{vehicle3.drift()}\n{vehicle3.drive()}\n{vehicle3.carry_cargo()}")
