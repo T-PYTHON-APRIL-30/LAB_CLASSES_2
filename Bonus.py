@@ -20,12 +20,17 @@ class Vehicle:
     def set_pro(self,new_brand,new_name):
         self.__name = new_name
         self.__brand = new_brand
-
+    def getColor(self):
+        return self.__color 
+    def setColor(self,color) :
+        self.__color=color  
+        
 car1 = Vehicle("Tesla","Roadster", "Plack", 40,7575)
 print(car1.drive())
 print(car1.drift())
 print(car1.carry_cargo())
-print(f"The color of the car is{car1.__color}")
+print(f"The color of the car is{car1.getColor()}")
+car1.setColor("Yellow")
 print(car1.get_pro())
 car1.set_pro("Tesla0","RostNew")
 print(car1.get_pro())
